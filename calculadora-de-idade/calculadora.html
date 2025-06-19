@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>calculadora de idade</title>
+        <link rel="stylesheet" href="calculadora.css">
+    </head>
+
+    <body>
+        <section>
+            <h1>Calculadora de Idade</h1>
+            <form id="campoIdade">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="data de nascimento" required>
+                <button type="submit">Calcular Idade</button>
+            </form>
+            <p id="resultado"></p>
+        </section>
+    </body>
+
+</html>
+<script>
+    document.getElementById('campoIdade').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const dataNascimento = new Date(document.getElementById('dataNascimento').value);
+        const hoje = new Date();
+        let idade = hoje.getFullYear() - dataNascimento.getFullYear();
+        const mes = hoje.getMonth() - dataNascimento.getMonth();
+
+        if (mes < 0 || (mes === 0 && hoje.getDate() < dataNascimento.getDate())) {
+            idade--;
+        }
+
+        document.getElementById('resultado').textContent = `Você tem ${idade} anos.`;
+    });
+</script>
