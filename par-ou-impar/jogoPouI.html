@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo Par ou Ímpar</title>
+<link rel="stylesheet" href="jogoPouI.css">
+<script src="jogoPouI.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo Par ou Ímpar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <section>
+        <h1>Jogo Par ou Ímpar</h1>
+        <label for="numeroUsuario">Digite um número entre 1 e 10:</label>
+        <input type="number" id="numeroUsuario" min="1" max="10">
+        <br>
+        <button onclick="jogar()">Jogar</button>
+        <button id="botaoResetar" onclick="resetarJogo()">Resetar</button>
+
+        <div id="resultado"></div>
+        <p>Vitórias do Jogador: <span id="placarJogador">0</span></p>
+        <p>Vitórias do Computador: <span id="placarComputador">0</span></p>
+    </section>
+</body>
+
+</html>
