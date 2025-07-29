@@ -9,13 +9,25 @@ setInterval(() => {
 
 const nomeSalvo = localStorage.getItem('nomeUsuario')
 if (nomeSalvo) {
-  document.getElementById('nomeSalvo').textContent = `👤 Olá novamente, ${nomeSalvo}`
+  document.getElementById('nomeSalvo').textContent = `Olá novamente, ${nomeSalvo}`
 }
 
 document.getElementById('salvarBtn').addEventListener('click', () => {
   const nome = document.getElementById('nomeInput').value
   if (nome) {
     localStorage.setItem('nomeUsuario', nome)
-    document.getElementById('nomeSalvo').textContent = `👤 Olá, ${nome}`
+    document.getElementById('nomeSalvo').textContent = `Olá, ${nome}`
   }
 })
+class Pessoa {
+  constructor(nome, idade) {
+    this.nome = nome
+    this.idade = idade
+  }
+
+  apresentar() {
+    console.log(`Meu nome é ${this.nome} e tenho ${this.idade} anos`)
+  }
+}
+
+
